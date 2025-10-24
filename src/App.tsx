@@ -94,9 +94,9 @@ function App() {
     const handleSubscribeQuote = () => {
         if (connectionRef.current) {
             connectionRef.current
-                .invoke("SubscribeToTradeExchangeSymbol", exchange, symbol)
+                .invoke("SubscribeToQuoteSymbol",  quoteSymbol)
                 .then(() => {
-                    console.log(`Subscribed to ${exchange}.${symbol}`);
+                    console.log(`Subscribed to ${quoteSymbol}`);
                     // TODO: see if we can use the MarketEvents enum here
                     setSubscriptions((prev) => [
                         ...prev,
